@@ -18,7 +18,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   }
 
   // Function invocation 
-  firstItem(items, function(first) {
+  firstItem(items, (first) => {
     console.log(first)
   });
 
@@ -30,7 +30,7 @@ function getLength(arr, cb) {
   return cb(arr.length)
 }
 
-getLength(items, function(length) {
+getLength(items, (length) => {
   console.log(length)
 });
 
@@ -39,7 +39,7 @@ function last(arr, cb) {
   return cb(arr.slice(-1))
 }
 
-last(items, function(lastItem) {
+last(items, (lastItem) => {
   console.log(lastItem)
 });
 
@@ -48,7 +48,7 @@ function sumNums(x, y, cb) {
   return cb(x + y)
 }
 
-sumNums( 2, 3, function(total) {
+sumNums( 2, 3, (total) => {
   console.log(total)
 })
 
@@ -57,7 +57,7 @@ function multiplyNums(x, y, cb) {
   return cb(x * y)
 }
 
-multiplyNums ( 3, 2, function(multiply) {
+multiplyNums ( 3, 2, (multiply) => {
   console.log(multiply)
 })
 
@@ -67,7 +67,7 @@ function contains(item, list, cb) {
   return cb(list.includes(item))
 }
 
-contains("Gum", items, function(found) {
+contains("Gum", items, (found) => {
   console.log(found)
 })
 
@@ -81,7 +81,7 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  let cleanArray = array.filter(function(elem, index, self) {
+  let cleanArray = array.filter((elem, index, self) => {
     return index == self.indexOf(elem);
   });
 
@@ -89,6 +89,8 @@ function removeDuplicates(array, cb) {
 
 
 }
+
+
 
 removeDuplicates(dupArray, function(nodupes) {
   console.log(nodupes)
